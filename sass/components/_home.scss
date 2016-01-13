@@ -1,0 +1,102 @@
+// Alternate home page
+
+.l-page {
+	@include padding(44px null null null);
+}
+.top-wrapper {
+	@include margin(null null 0.6rem null);
+	@extend %bright-yellow;
+	padding-bottom: 0.5rem;
+}
+.front .top {
+	text-align: center;
+}
+.top-row-wrapper {
+	@include clearfix;
+	@include margin(0 0 $vert-spacing-unit 0);
+}
+.left-top {
+	@include span(full);
+	@include margin(null null $vert-spacing-unit / 2 null);
+}
+.right-top {
+	@include span(full);
+}
+.center-wrapper {
+	// @include margin(null null 0.6rem null);
+}
+.sidebar-wrapper {
+	@include clearfix;
+	@include margin(null null 0.6rem null);
+	@include padding(null 1rem);
+}
+.bottom-wrapper {
+	@include clearfix;
+	.pane-video-slideshow-slick-slideshow {
+		@extend %bright-pink;
+		@include margin(null null 0.6rem null);
+		h2 {
+			text-align: center;
+		}
+	}
+	.page-node &,
+	.page-content &,
+	.page-search & {
+		.main-menu {
+			display: none;
+			visibility: hidden;
+			@extend %bright-yellow;
+			@include margin(null null 0.6rem null);
+			h2 {
+				text-align: left;
+				text-transform: uppercase;
+			}
+		}
+	}
+	.page-taxonomy & {
+		display: none;
+	}
+}
+
+.sub-bottom-wrapper {
+	@include clearfix;
+	@include margin(null null 0.6rem null);
+}
+
+@include breakpoint(tablet) {
+	.l-page {
+		@include padding(0 null null null);
+	}
+	.top-wrapper {
+		padding-top: 0;
+	}
+	.left-top {
+		@include margin(0);
+		@include span(first $desk-cols / 2 of $desk-cols);
+	}
+	.right-top {
+		@include span(last $desk-cols / 2 of $desk-cols);
+	}
+	.sidebar-wrapper {
+		@include padding(0);
+	}
+	.bottom-wrapper {
+		.page-node &,
+		.page-content &,
+		.page-search & {
+			.main-menu {
+				display: block;
+				visibility: visible;
+			}
+		}
+	}
+	.sub-bottom-wrapper {
+		@include clearfix;
+		.bottom-left {
+			@include span(first $desk-cols / 2 of $desk-cols);
+		}
+		.bottom-right {
+			@include span(last $desk-cols / 2 of $desk-cols);
+		}
+	}
+}

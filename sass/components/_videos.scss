@@ -1,0 +1,31 @@
+// Videos.
+
+.video-wrapper {
+	.left-video {
+		margin-bottom: rem(8);
+	}
+}
+
+.page-taxonomy {
+	.theme-video {
+		@include margin(null null 0.6rem null);
+		h2 {
+			text-transform: uppercase;
+			
+		}
+		@extend %bright-pink;
+	}
+}
+
+@include breakpoint(tablet) {
+	.video-wrapper {
+		@include clearfix;
+		.left-video {
+			@include span(first $desk-cols / 2 of $desk-cols);
+			margin-bottom: 0;
+		}
+		.right-video {
+			@include span(last $desk-cols / 2 of $desk-cols);
+		}
+	}
+}

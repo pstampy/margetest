@@ -1,0 +1,63 @@
+// Events
+
+.event-calendar-list {
+	@include margin(null null 0.6rem null);
+	.views-exposed-form {
+		display: none;
+		visibility: hidden;
+	}
+	@extend %dark-white;
+	.form-item-tid {
+		.description {
+			display: none;
+		}
+	}
+	.events-list-item {
+		@include clearfix;
+		margin-bottom: $vert-spacing-unit/2;
+		.date-display-single {
+			@include span(first 1 of 5);
+			text-transform: uppercase;
+			font-weight: bold;
+			font-style: normal;
+		}
+		p {
+			@include span(last 4 of 5);
+		}
+	}
+	.more-link {
+		a {
+			@include button($dark-grey);
+			font-size: $base-font-size * 1.8;
+		}
+	}
+}
+.date-display-single,
+.date-display-range {
+	display: inline-block;
+	font-size: $base-font-size * 1.4;
+	@include margin(null null $small-spacing null);
+	font-style: italic;
+	.date-display-range {
+		display: inline-block;
+	}
+}
+
+.page-content-event {
+	.related-information p + a {
+		font-size: $base-font-size * 1.8;
+	}
+}
+
+@include breakpoint(tablet) {
+	.event-calendar-list {
+		min-height: em(540);
+		@include margin(null null 0 null);
+	}
+}
+@include breakpoint(desktop) {
+	.event-calendar-list {
+		@include bleed-x(204% 0);
+	}
+
+}

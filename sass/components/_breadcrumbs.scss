@@ -1,0 +1,18 @@
+// Breadcrumbs
+.l-main {
+	.breadcrumb {
+		@include margin($vert-spacing-unit null);
+		@include padding(0 0 0 1.6em);
+		font-size: $base-font-size;
+		text-transform: uppercase;
+		li {
+			display: inline-block;
+			&:after {
+				content: '\00a0>\00a0';
+			}
+			&:last-child:after {
+				content: '';
+			}
+		}
+	}
+}

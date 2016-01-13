@@ -1,0 +1,84 @@
+// Boxes
+
+%box {
+	color: $light-black;
+	margin-bottom: 0.3rem;
+	padding: 1.5rem $vert-spacing-unit;
+	font-size: $base-font-size;
+}
+%bright-yellow {
+	@extend %box;
+	@include background($bright-yellow);
+	margin-bottom: 0;
+	@include breakpoint(desktop) {
+		@include bleed-x(100% 100%);
+	}
+}
+%bright-pink {
+	@extend %box;
+	@include background($bright-pink);
+	margin-bottom: 0;
+	@include breakpoint(desktop) {
+		@include bleed-x(100% 100%);
+	}
+}
+
+%bright-blue {
+	@extend %box;
+	@include background($bright-blue);
+	font-size: $base-font-size;
+	margin-bottom: 0;
+	@include breakpoint(desktop) {
+		@include bleed-x(100% 100%);
+	}
+}
+
+%dark-white {
+	@extend %box;
+	@include background($dark-white);
+	font-size: $base-font-size;
+	margin-bottom: 0;
+}
+
+%grapefruit {
+	@extend %box;
+	@include box-background($grapefruit);
+}
+
+%purple {
+	@extend %box;
+	@include box-background($purple);
+}
+
+%pink {
+	@extend %box;
+	@include box-background($pink);
+}
+
+%blue {
+	@extend %box;
+	@include box-background($blue);
+}
+
+%yellow {
+	@extend %box;
+	@include box-background($yellow);
+}
+
+%green {
+	@extend %box;
+	@include box-background($green);
+	@include breakpoint(desktop) {
+		@include bleed-x(100% 100%);
+	}
+}
+
+%black {
+	@extend %box;
+	@include background($light-black);
+	color: $white;
+	@include breakpoint(desktop) {
+		@include bleed-x(100% 100%);
+	}
+}
+

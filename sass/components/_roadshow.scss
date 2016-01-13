@@ -1,0 +1,28 @@
+// Roadshow block.
+
+.roadshow {
+	@extend %dark-white;
+	@include margin(null null 0.6rem null);
+}
+
+.panel-pane.roadshow {
+	@extend %green;
+	@include margin(null null 0.6rem null);
+}
+
+
+@include breakpoint(tablet) {
+	.panel-pane.roadshow {
+	    h2 {
+	    	@include padding(0 null 3em 6em);
+	    	background-image: url('../images/stakeholder.png');
+			background-position: $horz-spacing-unit;
+			background-repeat: no-repeat;
+	    }
+	    p {
+	    	@include padding(0 null 0 11em);
+	    	&:first-of-type {margin-top: -5em;} 
+	    	&:last-of-type {margin-bottom: 0em;} 
+	    }
+    }
+}

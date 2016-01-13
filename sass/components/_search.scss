@@ -1,0 +1,214 @@
+// Search
+
+$box-size: 80px;
+// .ie10 {
+
+	.container-inline div {
+		display: block !important;
+	}
+	.search-block-form {
+		@extend %bright-blue;
+		@include margin(null null 0.6rem null);
+		> div {
+			width: 100%;
+		}
+		::placeholder {
+			color: $black;
+		}
+		* {
+			height: $box-size
+		}
+		.container-inline {
+			position: relative;
+			div {
+				display: block !important;
+			}
+			.form-item,
+			.form-actions {
+				input,
+				input.form-submit {
+					@include border-radius(0);
+					border: none;
+					color: $white;
+					height: 100%;
+					line-height: $box-size;
+					padding: 0;
+				}
+				.form-search {
+					height: $box-size;
+					width: 100% !important;
+					position: absolute;
+					font-size: 20px;
+					line-height: 40px;
+					&::-webkit-input-placeholder {
+					   font-size: 20px;
+					}
+					&:-moz-placeholder { /* Firefox 18- */
+					   font-size: 20px;
+					}
+					&::-moz-placeholder {  /* Firefox 19+ */
+					   font-size: 20px;
+					}
+					&:-ms-input-placeholder {  
+					   font-size: 20px; 
+					}
+				}
+			}
+			.form-item {
+				input {
+					@include background($white);
+					color: $light-black;
+					font-size: 2em;
+					padding: 0 2.5em 0 0.5em;
+					border: 1px solid $white;
+					&:focus {
+						border: 1px solid $bright-pink;
+					}
+				}
+				label {
+					display: none;
+				}
+			}
+			.form-actions {
+				padding: 0;
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: $box-size;
+				z-index: 2;
+				input,
+				input.form-submit {
+					@include hide-text;
+					text-indent: 200%;
+					padding: 0;
+					width: 100%;
+					@include background(url('../images/search-hover.png'), $white);
+					background-repeat: no-repeat;
+					background-position: 50% 50%;
+					&:hover {
+						background-color: $light-grey;
+					}
+				}
+			}
+			.form-submit {
+				@include background(url('../images/search-hover.png'), $white);
+				@include hide-text;
+				@include padding(0);
+				background-position: 50% 50%;
+				background-repeat: no-repeat;
+				height: $box-size;
+				text-indent: 200%;
+				width: $box-size;
+				&:hover {
+					@include background(url('../images/search-hover.png'), $light-grey);
+					background-position: 50% 50%;
+					background-repeat: no-repeat;
+				}
+			}
+		}
+	}
+// }
+
+/* :not(.ie10) {
+	.search-block-form {
+		@include margin($vert-spacing-unit null);
+		height: $box-size;
+		width: 100%;
+		> div {
+			width: 100%;
+		}
+		::placeholder {
+		  color: $black;
+		  font-size: 25px;
+		  line-height: 40px;
+		}
+		.container-inline {
+			@include align-items(stretch);
+			@include display(flex);
+			@include flex-direction(row);
+			@include flex-wrap(nowrap);
+			@include justify-content(row-start);
+			width: 100%;
+		}
+		.form-item {
+			@include flex(5 1 auto);
+			@include margin(0);
+			width: 100%;
+			height: $box-size;
+		}
+		.form-actions {
+			@include flex(0 0 $box-size);
+		}
+		.form-actions {
+			width: $box-size;
+		}
+		input {
+			@include border-radius(0);
+			border: 0;
+		}
+		label {
+			display: none;
+		}
+		.form-search {
+			@include background($white);
+			@include margin(0);
+			@include padding(5px);
+			@include transition(border-color $base-duration $base-timing);
+			border: 1px solid $white;
+			color: $light-black;
+			font-size: $base-font-size * 3;
+			height: 100%;
+		  font-family: $heading-font-family;
+			&:focus {
+				border: 1px solid $bright-pink;
+			}
+		}
+		.form-submit {
+			@include background(url('../images/search-hover.png'), $white);
+			@include hide-text;
+			@include padding(0);
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+			height: $box-size;
+			text-indent: 200%;
+			width: $box-size;
+			&:hover {
+				@include background(url('../images/search-hover.png'), $light-grey);
+				background-position: 50% 50%;
+				background-repeat: no-repeat;
+			}
+		}
+	}
+} */
+
+.page-search {
+	.pager {
+		@include pager($bright-blue);
+	}
+	.ds-search-extra {
+		font-size: $base-font-size * 1.8;
+		@include margin(null null $vert-spacing-unit / 2 null);
+	}
+}
+
+@include breakpoint(tablet) {
+	.search-block-form {
+		.form-search {
+			font-size: $base-font-size * 4 !important;
+
+			&::-webkit-input-placeholder {
+			   font-size: $base-font-size * 1 !important;
+			}
+			&:-moz-placeholder { /* Firefox 18- */
+			   font-size: $base-font-size * 1 !important;
+			}
+			&::-moz-placeholder {  /* Firefox 19+ */
+			   font-size: $base-font-size * 1 !important;  
+			}
+			&:-ms-input-placeholder {  
+			   font-size: $base-font-size * 3 !important; 
+			}
+
+		}
+	}
+}

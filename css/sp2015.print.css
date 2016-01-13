@@ -1,0 +1,69 @@
+.messages--status, 
+.pane-2, 
+.pane-3, 
+.messages--warning, 
+.search-form, 
+.menu-block-1,
+.pane-video-slideshow-slick-slideshow,
+.social-media,
+.footer-image,
+.back-to-top-wrapper,
+.footer-menu,
+.bottom-wrapper,
+.left-sidebar,
+.page-service-links,
+.tabs--primary,
+.block--workbench-block,
+.view-filters,
+.pane-service-links,
+.more-link,
+.pane-taxonomy-term-field-theme-taxonomy-video-refer,
+.footer-wrapper {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.sub-footer-wrapper,
+.top-wrapper,
+.mean-bar,
+.menu-block-1,
+.pane-term-description,
+.top
+{
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+.l-header {
+  height: 180px !important;
+}
+
+.pane-term-description,
+.related-information-item {
+  background-image: none !important;
+}
+
+.term-description {
+  padding-bottom: 0px !important;
+}
+
+.sub-footer-wrapper, 
+.sub-bottom-wrapper, 
+.copyright {
+  margin-bottom: 0px !important;
+}
+
+.right-column, .bottom-left {
+  width: 100% !important;
+}
+
+.left-logo img{
+	width:40%;
+	height: auto;
+}
+
+.right-logo img{
+	width: 40%;
+	height: auto;
+	float:right;
+}

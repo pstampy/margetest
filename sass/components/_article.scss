@@ -1,0 +1,19 @@
+// Article
+
+.page-node {
+	.content {
+		@include padding(null rem(8) null null);
+		article {
+			@include span (last 1 of 2);
+			@include margin(null null $vert-spacing-unit / 2 $horz-spacing-unit / 2);
+			img {
+				height: auto;
+				max-width: 100%;
+			}
+			figcaption {
+				text-align: right;
+				font-size: $base-font-size * 1.4;
+			}
+		}
+	}
+}

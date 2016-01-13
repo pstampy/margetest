@@ -1,0 +1,19 @@
+// File
+
+
+.file-list {
+	li {
+		text-indent: -2em;
+		padding-left: 1em;
+		list-style-type: none;
+	}
+	.file {
+		&.pdf {
+			@include background(url('../images/pdf.png'));
+			background-repeat: no-repeat;
+			background-position: center left;
+			@include padding(0.5em 0 0.5em 2em);
+		}
+	}
+}
+

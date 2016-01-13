@@ -1,0 +1,11 @@
+// Footer and wrappers
+
+.l-footer {
+	text-align: center;
+}
+
+.footer-wrapper {
+	@extend %bright-blue;
+	@include clearfix;
+	@include margin(null null 0.6rem null);
+}

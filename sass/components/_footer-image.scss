@@ -1,0 +1,16 @@
+// Footer image
+
+.footer-image {
+	@include background(url('../images/nisa_logo_footer.png'));
+	@include margin(null null $vert-spacing-unit / 2 null);
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 53px;
+	width: 100%;
+}
+
+@include breakpoint(desktop) {
+	.footer-image {
+		background-position: 10% center;
+	}
+}

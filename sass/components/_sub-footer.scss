@@ -1,0 +1,60 @@
+// Sub footer
+.l-footer{
+	@extend %black;
+	@include display(block);
+	@include clearfix;
+	font-size: $base-font-size * 1.4;
+
+	
+}
+
+
+
+.social-media {
+	text-align: left;	
+}
+.footer-image  {
+	text-align: right;
+}
+
+.copyright,
+.back-to-top-wrapper {
+	@include margin($vert-spacing-unit / 2 null null);
+	text-align: center;
+}
+.back-to-top a {
+	@include background(url('../images/back-to-top.png'), $white);
+	@include hide-text;
+	@include margin(0 auto);
+	@include transition(outline $base-duration $base-timing, background-color $base-duration $base-timing);
+	background-position: right center;
+	background-repeat: no-repeat;
+	display: block;
+	float: none;
+	height: 30px;
+	text-indent: 200%;
+	width: 30px;
+	&:hover {
+		background-color: $light-grey;
+		outline: 1px solid $white;
+	}
+}
+@include breakpoint(desktop) {
+	.l-footer {
+		.sub-footer-wrapper {
+			display:inline-block;
+			width: 100%;
+			max-width: 960px;
+		}
+	}
+	.social-media,
+	.footer-menu,
+	.footer-image {
+	
+		width: 32%;
+		max-width: 320px;
+		display: inline-block;
+		vertical-align: bottom;
+	
+	}
+}

@@ -1,0 +1,102 @@
+// Related information
+.related-information {
+	@include margin($vert-spacing-unit null);
+	@include padding(null $base-font-size);
+	h2 {
+		text-transform: uppercase;
+	}
+	.views-exposed-form {
+		margin-bottom: $vert-spacing-unit;
+		label {
+			text-transform: uppercase;
+			float: left;
+			font-size: $base-font-size * 1.8;
+			@include button($dark-grey);
+			&:hover {
+				background-color: $white;
+				color: $dark-grey;
+			}
+		}
+		.views-exposed-widget {
+			float: none;
+		}
+	}
+	.bef-select-as-links {
+		> .form-item {
+			@include align-items(stretch);
+			@include display(flex);
+			@include flex-direction(row);
+			@include flex-wrap(wrap);
+			@include justify-content(flex-start);
+			.form-item {
+				@include flex(0 1 auto);
+				@include margin(null $base-font-size * 2 $base-font-size / 2 null);
+				border: 1px solid $light-grey;
+				a {
+					display: block;
+					font-size: $base-font-size * 1.8;
+					text-align: center;
+					width: 100%;
+					@include button($dark-grey);
+				}
+				$buttons: (1: #3570A6, 2: #55AF07, 3: #FD0454);
+				@each $tid, $color in $buttons {
+					&#edit-tid-#{$tid} {
+						a {
+							@include button($color);
+							color: $dark-grey;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.pane-aggregation-aggregation-teaser-theme-filter,
+	&.pane-aggregation-aggregation-all-teasers {
+		.related-information-item {
+			@include padding(0);
+			h3 {
+				text-transform: normal;
+			}
+		}
+	}
+	.related-information-item {
+		margin-bottom: $vert-spacing-unit;
+		@include padding(null null null rem(70));
+		min-height: 70px;
+		h3 {
+			text-transform: uppercase;
+		}
+		img {
+			float: left;
+			@include margin(rem(3) rem(10) rem(10) null);
+		}
+
+		$icons: (21: business, 22: science, 23: education);
+
+		@each $tid, $icon in $icons {
+			&.tid-#{$tid} {
+				@include background(url('../images/icons/sector/sector-#{$icon}.png'));
+				background-position: left top;
+				background-repeat: no-repeat;
+			}
+		}
+	}
+	.pager {
+		@include pager($bright-blue);
+	}
+}
+
+@include breakpoint(tablet) {
+	.related-information {
+		.bef-select-as-links {
+			> .form-item {
+				.form-item {
+					a {
+						font-size: $base-font-size * 1.8;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,37 @@
+// Base layouts
+
+$sidebar-columns: 6;
+$column-columns: 6;
+
+html {
+	box-sizing: border-box;
+	*,
+	*::after,
+	*::before {
+		box-sizing: inherit;
+	}
+}
+
+.l-page {
+	@include container;
+}
+
+@include breakpoint(tablet) {
+	.top,
+	.content-wrapper {
+		@include clearfix;
+	}
+	.left-sidebar {
+		@include span(first $desk-cols / $desk-cols * $sidebar-columns - 3 of $desk-cols);
+		.page-taxonomy & {
+			@include span(first $desk-cols / $desk-cols * $sidebar-columns of $desk-cols);
+		}
+	}
+	.right-column {
+		@include span(last $desk-cols / $desk-cols * $column-columns + 3 of $desk-cols);
+		.page-taxonomy & {
+			@include padding(null rem(5) null null);
+			@include span(last $desk-cols / $desk-cols * $column-columns of $desk-cols);
+		}
+	}
+}

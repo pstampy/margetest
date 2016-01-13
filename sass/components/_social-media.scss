@@ -1,0 +1,80 @@
+// Social media
+
+.social-media {
+	width: 100%;
+	@include margin(null null $vert-spacing-unit / 2 null);
+	.account-list {
+		@include align-items(stretch);
+		@include display(flex);
+		@include flex-direction(row);
+		@include flex-wrap(nowrap);
+		@include justify-content(center);
+		div {
+			@include flex(0 0 auto);
+			@include margin(5px);
+			@include transition(background-color $base-duration $base-timing);
+			height: 54px;
+			width: 54px;
+			a {
+				@include display(block);
+				@include hide-text;
+				@include transition(opacity $base-duration $base-timing);
+				height: 100%;
+				opacity: 0.7;
+				text-indent: 200%;
+				width: 100%;
+				&:hover {
+					opacity: 1.0;
+				}
+			}
+
+			$social-media: facebook, twitter, youtube;
+
+			@each $account in $social-media {
+				&.#{$account} a {
+					@include background(url('../images/icons/social/icn-#{$account}.png'), $light-black);
+				}
+			}
+		}
+	}
+}
+.social-feed {
+	@extend %dark-white;
+	.social-list-item {
+		@include clearfix;
+		margin-bottom: $vert-spacing-unit/2;
+		.date-display-single {
+			@include span(first 1 of 5);
+			text-transform: uppercase;
+			font-weight: bold;
+			font-style: normal;
+		}
+		p {
+			@include span(last 4 of 5);
+		}
+	}
+	.more-link {
+		a {
+			@include button($dark-grey);
+			font-size: $base-font-size * 1.8;
+		}
+	}
+}
+
+@include breakpoint(tablet) {
+	.social-feed {
+		min-height: em(540);
+	}
+	
+}
+@include breakpoint(desktop) {
+	.social-feed {
+		@include bleed-x(0 209%);
+	}
+	.social-media {
+		.account-list {
+			@include justify-content();
+		}
+	}
+}
+

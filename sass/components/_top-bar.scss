@@ -1,0 +1,17 @@
+// Top bar
+
+.l-top-bar {
+	display: none;
+	visibility: hidden;
+}
+
+@include breakpoint(tablet) {
+	.l-top-bar {
+		@extend %black;
+		padding: 0;
+		display: block;
+		visibility: visible;
+		height: $base-font-size;
+		margin-bottom: 0;
+	}
+}

@@ -1,0 +1,40 @@
+// Theme specific icons.
+
+$theme-icons: (17: leap, 18: together, 19: bright, 20: example);
+$node-icons: (1136: agenda, 1486: media);
+
+@each $tid, $icon in $theme-icons {
+	.page-taxonomy-term-#{$tid} .term-description {
+		@include padding(null 0 em(270) null);
+		@include background(url('../images/icons/theme/theme-#{$icon}.png'));
+		background-repeat: no-repeat;
+		background-position: bottom center;
+		min-height: em(260);
+		@include breakpoint(desktop) {
+			background-position: right center;
+			@include padding(null em(270) 0 null);
+		}
+	}
+}
+
+@each $nid, $icon in $node-icons {
+	.page-node-#{$nid} {
+		.right-column {
+			opacity: 0.9;
+			background-color: $white;
+			> * {
+				opacity: 1.0;
+			}
+		}
+		.content-wrapper {
+			background-image: url('../images/icons/theme/theme-#{$icon}.png');
+			background-repeat: no-repeat;
+			background-position: center em(410px);
+		}
+		@include breakpoint(tablet) {
+			.content-wrapper {
+				background-position: right em(280px);
+			}
+		}
+	}
+}

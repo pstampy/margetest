@@ -1,0 +1,62 @@
+// Mailchimp styles
+
+#mc_embed_signup {
+	@include margin(0 0 $vert-spacing-unit 0);
+	.indicates-required {
+		font-size: $base-font-size * 1.8;
+		font-style: italic;
+		@include margin(0 0 $vert-spacing-unit 0);
+	}
+	.asterisk {
+		color: $red;
+	}
+	.mc-field-group {
+		@include margin(0 0 $vert-spacing-unit 0);
+		> label {
+			font-size: $base-font-size * 1.8;
+		}
+		&.input-group {
+			strong {
+				font-size: $base-font-size * 1.8;
+				font-family: $heading-font-family;
+				@include margin(0 0 $small-spacing 0);
+				@include display(block);
+			}
+		}
+	}
+	ul {
+		@include no-bullets;
+		@include padding(0);
+		@include display(table);
+		li {
+			@include display(table-row);
+			input, label {
+				@include display(table-cell);
+				@include padding(0 0 $small-spacing);
+			}
+		}
+	}
+	label {
+		font-family: $heading-font-family;
+		@include margin(0 0 $small-spacing 0);
+	}
+	input[type='text'],
+	input[type='email'] {
+		font-size: $base-font-size * 1.8;
+		border: 1px solid $dark-white;
+		@include border-radius(0);
+		font-family: $heading-font-family;
+		@include margin(0 0 $small-spacing 0);
+	}
+	input[type='submit'] {
+		@include border-radius(0);
+		@include background($white);
+		color: $bright-pink;
+		font-size: $base-font-size * 1.8;
+		border: 1px solid $bright-pink;
+		&:hover {
+			background-color: $bright-pink;
+			color: $white;
+		}
+	}
+}

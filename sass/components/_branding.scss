@@ -1,0 +1,41 @@
+// Branding
+
+.l-branding {
+	@extend %bright-yellow;
+	@include clearfix;
+	padding-bottom: 0;
+	.site-logos {
+		@include clearfix;
+		text-align: center;
+		@include pad(2,2);
+		.left-logo {
+			margin-bottom: $vert-spacing-unit;
+		}
+		.right-logo {
+		}
+	}
+	a img {
+		border: 0;
+	}
+}
+
+
+@include breakpoint(tablet) {
+	.l-branding {
+		.site-logos {
+			@include pad(0);
+			.left-logo {
+				@include span(first $desk-cols / 2 of $desk-cols);
+				text-align: right;
+				padding-right: 1px;
+			}
+			.right-logo {
+				@include span(last $desk-cols / 2 of $desk-cols);
+				text-align: left;
+				padding-left: 1px;
+			}
+			
+		}
+	}
+}
+
